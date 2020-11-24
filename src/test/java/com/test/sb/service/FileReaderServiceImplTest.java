@@ -1,5 +1,7 @@
 package com.test.sb.service;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Collections;
 import java.util.List;
 import org.junit.Test;
@@ -7,11 +9,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class CsvFileReaderServiceImplTest {
+public class FileReaderServiceImplTest {
     private static final String EMPTY_FILE_NAME = "src/test/resources/empty.csv";
     private static final String FILE_WITH_DATA_NAME = "src/test/resources/test.csv";
     private static final String NOT_EXISTED_FILE_NAME = "src/test/resources/123.csv";
@@ -38,12 +39,11 @@ public class CsvFileReaderServiceImplTest {
                     + "Edmund into selling out his Brother and Sisters to the Witch.\"");
 
     @Autowired
-    private CsvFileReaderService service;
+    private FileReaderService service;
 
     @Test
     public void readFile_OK() {
         List<String> actual = service.readFile(FILE_WITH_DATA_NAME);
-        actual.forEach(System.out::println);
         assertEquals(actual, LIST_WITH_DATA);
     }
 

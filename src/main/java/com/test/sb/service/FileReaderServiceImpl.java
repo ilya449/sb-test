@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CsvFileReaderServiceImpl implements CsvFileReaderService {
+public class FileReaderServiceImpl implements FileReaderService {
     @Override
     public List<String> readFile(String path) {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
