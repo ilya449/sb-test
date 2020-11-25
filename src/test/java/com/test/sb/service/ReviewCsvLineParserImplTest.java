@@ -1,6 +1,6 @@
 package com.test.sb.service;
 
-import com.test.sb.model.Review;
+import com.test.sb.dto.Review;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class CsvLineParserImplTest {
+public class ReviewCsvLineParserImplTest {
     public static final long ID = 1L;
     public static final String PRODUCT_ID = "B001E4KFG0";
     public static final String USER_ID = "A3SGXH7AUHU8GW";

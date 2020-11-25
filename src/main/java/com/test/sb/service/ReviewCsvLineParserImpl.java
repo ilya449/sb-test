@@ -1,7 +1,7 @@
 package com.test.sb.service;
 
 import com.opencsv.CSVParser;
-import com.test.sb.model.Review;
+import com.test.sb.dto.Review;
 import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -9,7 +9,7 @@ import java.time.ZoneId;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CsvLineParserImpl implements CsvLineParser<Review> {
+public class ReviewCsvLineParserImpl implements CsvLineParser<Review> {
     private static final int ID_INDEX = 0;
     private static final int PRODUCT_ID_INDEX = 1;
     private static final int USER_ID_INDEX = 2;

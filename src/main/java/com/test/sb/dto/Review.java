@@ -1,4 +1,4 @@
-package com.test.sb.model;
+package com.test.sb.dto;
 
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
