@@ -1,4 +1,4 @@
-package com.test.sb.service;
+package com.test.sb.service.file;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

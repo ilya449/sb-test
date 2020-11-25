@@ -1,4 +1,4 @@
-package com.test.sb.service;
+package com.test.sb.service.parser;
 
 import com.opencsv.CSVParser;
 import com.test.sb.dto.ReviewDto;
