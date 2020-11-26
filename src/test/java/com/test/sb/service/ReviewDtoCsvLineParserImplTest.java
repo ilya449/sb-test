@@ -19,8 +19,7 @@ public class ReviewDtoCsvLineParserImplTest {
     public static final String PRODUCT_ID = "B001E4KFG0";
     public static final String USER_ID = "A3SGXH7AUHU8GW";
     public static final String PROFILE_NAME = "delmartian";
-    public static final int HELPFULNESS_NUMERATOR = 1;
-    public static final int HELPFULNESS_DENOMINATOR = 1;
+    public static final int ONE = 1;
     public static final int SCORE = 5;
     public static final long SECONDS = 1303862400L;
     public static final String WRONG_FORMAT_LINE = "1,B001E4KFG0,A3SGXH7AUHU8GW,delmartian,1,1";
@@ -36,8 +35,8 @@ public class ReviewDtoCsvLineParserImplTest {
                 .productId(PRODUCT_ID)
                 .userId(USER_ID)
                 .profileName(PROFILE_NAME)
-                .helpfulnessNumerator(HELPFULNESS_NUMERATOR)
-                .helpfulnessDenominator(HELPFULNESS_DENOMINATOR)
+                .helpfulnessNumerator(ONE)
+                .helpfulnessDenominator(ONE)
                 .score(SCORE)
                 .time(LocalDateTime.ofInstant(Instant
                         .ofEpochSecond(SECONDS), ZoneId.systemDefault()))

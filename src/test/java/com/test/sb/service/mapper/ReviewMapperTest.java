@@ -12,7 +12,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
@@ -37,8 +36,6 @@ public class ReviewMapperTest {
     private GeneralMapper<Product> productMapper;
     @Autowired
     private GeneralMapper<User> userMapper;
-    @Autowired
-    private PasswordEncoder encoder;
 
     @Test
     public void mapReview_OK() {

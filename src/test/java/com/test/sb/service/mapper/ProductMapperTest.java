@@ -12,14 +12,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class ProductMapperTest {
+    public static final String EXTERNAL_ID = "B001E4KFG0";
     @Autowired
     private GeneralMapper<Product> mapper;
 
     @Test
     public void mapProduct_OK() {
         Product expected = new Product();
-        expected.setExternalId("B001E4KFG0");
-        ReviewDto dto = ReviewDto.builder().productId("B001E4KFG0").build();
+        expected.setExternalId(EXTERNAL_ID);
+        ReviewDto dto = ReviewDto.builder()
+                .productId(EXTERNAL_ID)
+                .build();
         Product actual = mapper.getEntity(dto);
         Assert.assertEquals(expected, actual);
     }
