@@ -10,11 +10,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Entity
 public class Review {
     @Id
@@ -24,11 +27,14 @@ public class Review {
     private Integer helpfulnessNumerator;
     private Integer helpfulnessDenominator;
     private Integer score;
+    @NonNull
     private LocalDateTime time;
     private String summary;
     private String text;
     @ManyToOne
+    @NonNull
     private Product product;
     @ManyToOne
+    @NonNull
     private User user;
 }

@@ -9,11 +9,16 @@ import javax.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 @Builder
 @Entity
 public class User {
@@ -21,9 +26,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String externalId;
+    @NonNull
     private String profileName;
     private String email;
+    @NonNull
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private String password;
     @ManyToMany
+    @NonNull
     private Set<Role> roles;
 }

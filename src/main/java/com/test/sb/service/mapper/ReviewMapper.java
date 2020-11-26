@@ -1,13 +1,15 @@
 package com.test.sb.service.mapper;
 
 import com.test.sb.dto.ReviewDto;
+import com.test.sb.model.Product;
 import com.test.sb.model.Review;
+import com.test.sb.model.User;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ReviewMapper implements GeneralMapper<Review> {
-    private final UserMapper userMapper;
-    private final ProductMapper productMapper;
+    private final GeneralMapper<User> userMapper;
+    private final GeneralMapper<Product> productMapper;
 
     public ReviewMapper(UserMapper userMapper, ProductMapper productMapper) {
         this.userMapper = userMapper;

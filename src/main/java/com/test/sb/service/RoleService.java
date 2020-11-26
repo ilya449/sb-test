@@ -20,8 +20,4 @@ public class RoleService {
     public Role findByName(Role.RoleName name) {
         return repository.getByRoleName(name).orElseThrow(NoSuchElementException::new);
     }
-
-    public Role findById(Long id) {
-        return repository.findById(id).orElseThrow(NoSuchElementException::new);
-    }
 }
