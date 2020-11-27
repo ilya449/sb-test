@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class RoleServiceTest {
+public class RoleServiceImplTest {
     public static final String USER_ROLE_NAME = "USER";
     public static final int ONE = 1;
     @MockBean
@@ -27,9 +27,7 @@ public class RoleServiceTest {
     @Test
     public void addRole() {
         Role role = Role.of(USER_ROLE_NAME);
-
         service.save(role);
-
         Mockito.verify(repository, Mockito.times(ONE)).save(role);
     }
 

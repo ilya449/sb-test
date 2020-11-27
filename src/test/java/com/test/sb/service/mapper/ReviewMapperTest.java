@@ -69,39 +69,6 @@ public class ReviewMapperTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test(expected = NullPointerException.class)
-    public void mapWithOutUser() {
-        ReviewDto dto = ReviewDto.builder()
-                .id((long) ONE_NUMBER)
-                .productId(PRODUCT_ID)
-                .helpfulnessNumerator(ONE_NUMBER)
-                .helpfulnessDenominator(ONE_NUMBER)
-                .score(SCORE_5)
-                .time(TIME)
-                .summary(SUMMARY)
-                .text(TEXT)
-                .build();
-
-        reviewMapper.getEntity(dto);
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void mapWithOutProduct() {
-        ReviewDto dto = ReviewDto.builder()
-                .id((long) ONE_NUMBER)
-                .userId(USER_ID)
-                .profileName(PROFILE_NAME)
-                .helpfulnessNumerator(ONE_NUMBER)
-                .helpfulnessDenominator(ONE_NUMBER)
-                .score(SCORE_5)
-                .time(TIME)
-                .summary(SUMMARY)
-                .text(TEXT)
-                .build();
-
-        reviewMapper.getEntity(dto);
-    }
-
     @Test
     public void mapOnlyWithRequiredFields() {
         ReviewDto dto = ReviewDto.builder()

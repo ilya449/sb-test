@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class ReviewServiceTest {
+public class ReviewServiceImplTest {
     public static final int ONE = 1;
     public static final String FIRST_PRODUCT_ID = "B001E4KFG0";
     public static final String SECOND_PRODUCT_ID = "B00813GRG4";
@@ -31,7 +31,7 @@ public class ReviewServiceTest {
     @MockBean
     private ReviewRepository repository;
     @Autowired
-    private GeneralService<Review> service;
+    private ReviewService service;
     @Autowired
     private PasswordEncoder encoder;
 

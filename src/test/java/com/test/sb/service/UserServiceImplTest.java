@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class UserServiceTest {
+public class UserServiceImplTest {
     public static final int ONE = 1;
     public static final String PASSWORD = "pass123";
     public static final Set<Role> USER_ROLE_SET = Set.of(Role.of("USER"));
@@ -26,7 +26,7 @@ public class UserServiceTest {
     @MockBean
     private UserRepository repository;
     @Autowired
-    private GeneralService<User> service;
+    private UserService service;
     @Autowired
     private PasswordEncoder encoder;
 

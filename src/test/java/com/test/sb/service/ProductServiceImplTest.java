@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class ProductServiceTest {
+public class ProductServiceImplTest {
     public static final String FIRST_PRODUCT_ID = "B001E4KFG0";
     public static final String SECOND_PRODUCT_ID = "B00813GRG4";
     public static final String THIRD_PRODUCT_ID = "B000LQOCH0";
@@ -22,7 +22,7 @@ public class ProductServiceTest {
     private ProductRepository repository;
 
     @Autowired
-    private GeneralService<Product> service;
+    private ProductService service;
 
     @Test
     public void saveAll() {

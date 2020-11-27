@@ -11,7 +11,7 @@ public class ReviewMapper implements GeneralMapper<Review> {
     private final GeneralMapper<User> userMapper;
     private final GeneralMapper<Product> productMapper;
 
-    public ReviewMapper(UserMapper userMapper, ProductMapper productMapper) {
+    public ReviewMapper(GeneralMapper<User> userMapper, GeneralMapper<Product> productMapper) {
         this.userMapper = userMapper;
         this.productMapper = productMapper;
     }
