@@ -1,6 +1,7 @@
 package com.test.sb.service;
 
-import com.test.sb.dto.Review;
+import com.test.sb.dto.ReviewDto;
+import com.test.sb.service.parser.CsvLineParser;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -13,30 +14,29 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class ReviewCsvLineParserImplTest {
+public class ReviewDtoCsvLineParserImplTest {
     public static final long ID = 1L;
     public static final String PRODUCT_ID = "B001E4KFG0";
     public static final String USER_ID = "A3SGXH7AUHU8GW";
     public static final String PROFILE_NAME = "delmartian";
-    public static final int HELPFULNESS_NUMERATOR = 1;
-    public static final int HELPFULNESS_DENOMINATOR = 1;
+    public static final int ONE = 1;
     public static final int SCORE = 5;
     public static final long SECONDS = 1303862400L;
     public static final String WRONG_FORMAT_LINE = "1,B001E4KFG0,A3SGXH7AUHU8GW,delmartian,1,1";
     public static final String EMPTY_LINE = "";
 
     @Autowired
-    private CsvLineParser<Review> parser;
+    private CsvLineParser<ReviewDto> parser;
 
     @Test
     public void testParser_OK() {
-        Review expected = Review.builder()
+        ReviewDto expected = ReviewDto.builder()
                 .id(ID)
                 .productId(PRODUCT_ID)
                 .userId(USER_ID)
                 .profileName(PROFILE_NAME)
-                .helpfulnessNumerator(HELPFULNESS_NUMERATOR)
-                .helpfulnessDenominator(HELPFULNESS_DENOMINATOR)
+                .helpfulnessNumerator(ONE)
+                .helpfulnessDenominator(ONE)
                 .score(SCORE)
                 .time(LocalDateTime.ofInstant(Instant
                         .ofEpochSecond(SECONDS), ZoneId.systemDefault()))
@@ -46,7 +46,7 @@ public class ReviewCsvLineParserImplTest {
                         + " like a stew than a processed meat and it smells better. My Labrador"
                         + " is finicky and she appreciates this product better than  most.")
                 .build();
-        Review actual = parser.parseData("1,B001E4KFG0,A3SGXH7AUHU8GW,delmartian,1,1,5,"
+        ReviewDto actual = parser.parseData("1,B001E4KFG0,A3SGXH7AUHU8GW,delmartian,1,1,5,"
                 + "1303862400,Good Quality Dog Food,I have bought several of the Vitality canned"
                 + " dog food products and have found them all to be of good quality. The product"
                 + " looks more like a stew than a processed meat and it smells better. My Labrador"
