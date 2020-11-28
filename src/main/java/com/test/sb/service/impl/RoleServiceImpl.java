@@ -3,7 +3,6 @@ package com.test.sb.service.impl;
 import com.test.sb.model.Role;
 import com.test.sb.repository.RoleRepository;
 import com.test.sb.service.RoleService;
-import java.util.NoSuchElementException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +20,6 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Role findByName(Role.RoleName name) {
-        return repository.getByRoleName(name).orElseThrow(NoSuchElementException::new);
+        return repository.getByRoleName(name).get();
     }
 }

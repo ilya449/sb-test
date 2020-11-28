@@ -29,11 +29,9 @@ public class User {
     @NonNull
     private String profileName;
     private String email;
-    @NonNull
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private String password;
     @ManyToMany
-    @NonNull
     private Set<Role> roles;
 }

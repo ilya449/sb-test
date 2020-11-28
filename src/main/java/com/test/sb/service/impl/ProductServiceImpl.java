@@ -18,4 +18,9 @@ public class ProductServiceImpl implements ProductService {
     public void saveAll(List<Product> products) {
         repository.saveAll(products);
     }
+
+    @Override
+    public Product findByExternalId(String id) {
+        return repository.findProductByExternalId(id).get();
+    }
 }
